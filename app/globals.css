@@ -1,17 +1,19 @@
 @import "tailwindcss";
 
-a {
-  @apply text-[#333];
+@layer base {
+  a {
+    @apply text-gray-700;
+  }
 }
 
-input {
-  @apply border border-gray-200 h-12 rounded-3xl p-3 w-full focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 outline-none focus:border-gray-300 pl-10;
+@layer utilities {
+  .text-bigger-hello {
+    @apply text-3xl font-semibold;
+  }
 }
-input[type="submit"] {
-  @apply pl-0;
-}
-.input-containers {
-  display: flex;
-  align-items: center;
-  position: relative;
+
+@layer components {
+  .primary-btn {
+    @apply w-full min-h-10 bg-gray-400 rounded-full font-semibold disabled:text-gray-400 hover:bg-gray-500 transition-colors duration-150 cursor-pointer text-white;
+  }
 }
