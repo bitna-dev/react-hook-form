@@ -1,5 +1,6 @@
 "use server";
 import { z } from "zod";
+
 const checkEmail = (email: string) => !email.includes("@zod.com");
 const checkPassword = (password: string) => !/\d/.test(password);
 export const creatAccount = async (prevState: any, formData: FormData) => {
